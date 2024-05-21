@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
@@ -15,7 +17,8 @@ class _BmiScreenState extends State<BmiScreen> {
 
   double _result() {
     double result = (double.tryParse(_tecWight.text) ?? 0) /
-        ((double.tryParse(_tecHeight.text) ?? 0) * 0.3048);
+        (((double.tryParse(_tecHeight.text) ?? 0) * 0.3048) *
+            ((double.tryParse(_tecHeight.text) ?? 0) * 0.3048));
     return result;
   }
 
