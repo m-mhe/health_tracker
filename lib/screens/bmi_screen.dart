@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
@@ -155,6 +153,10 @@ class _BmiScreenState extends State<BmiScreen> {
                         child: TextField(
                           controller: _tecWight,
                           onChanged: (v) {
+                            List<String> value = v.split('');
+                            if(value.last == '-'){
+                              _tecWight.clear();
+                            }
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
@@ -237,6 +239,10 @@ class _BmiScreenState extends State<BmiScreen> {
                         child: TextField(
                           controller: _tecHeight,
                           onChanged: (v) {
+                            List<String> value = v.split('');
+                            if(value.last == '-'){
+                              _tecHeight.clear();
+                            }
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
