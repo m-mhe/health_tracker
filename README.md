@@ -1,6 +1,6 @@
 # health_tracker
 
-A health tracker app project.
+A health tracker app project. This application track a person's water consumption per day and calculate body mass index.
 
 ## Getting Started
 
