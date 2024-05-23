@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
+import 'bmr_screen.dart';
+
 class BmiScreen extends StatefulWidget {
   const BmiScreen({super.key});
 
@@ -26,7 +28,7 @@ class _BmiScreenState extends State<BmiScreen> {
     } else if (_result() <= 24.9) {
       return ' Normal';
     } else if (_result() <= 29.9) {
-      return 'Over weight';
+      return ' Over weight';
     } else if (_result() <= 34.9) {
       return ' Obese';
     } else if (_result() > 34.9) {
@@ -154,7 +156,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           controller: _tecWight,
                           onChanged: (v) {
                             List<String> value = v.split('');
-                            if(value.last == '-'){
+                            if (value.last == '-') {
                               _tecWight.clear();
                             }
                             setState(() {});
@@ -197,7 +199,7 @@ class _BmiScreenState extends State<BmiScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20, bottom: 80),
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
@@ -240,7 +242,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           controller: _tecHeight,
                           onChanged: (v) {
                             List<String> value = v.split('');
-                            if(value.last == '-'){
+                            if (value.last == '-') {
                               _tecHeight.clear();
                             }
                             setState(() {});
@@ -285,13 +287,41 @@ class _BmiScreenState extends State<BmiScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Lottie.asset('assets/animations/waterAnimation.json'),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            backgroundColor: Colors.white,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Lottie.asset('assets/animations/waterAnimation.json'),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const BmrScreen();
+                  },
+                ),
+              );
+            },
+            child: const Text('BMR'),
+          ),
+        ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _tecHeight.dispose();
+    _tecWight.dispose();
+    super.dispose();
   }
 }

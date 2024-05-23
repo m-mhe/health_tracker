@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_tracker/screens/bmi_screen.dart';
+import 'package:health_tracker/screens/bmr_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:health_tracker/other_classes/data_model.dart';
 import 'package:intl/intl.dart';
@@ -24,7 +25,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
           _eightGlassMilestoneChecker(),
           _historyAndTotalGlassIndicator(context),
           _horizontalLine(context),
-          _waterConsumptionHistory()
+          _waterConsumptionHistory(),
         ],
       ),
       floatingActionButton: _buildBuildFabBmiScreenNavigator(),
@@ -136,21 +137,42 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Widgets
-  FloatingActionButton _buildBuildFabBmiScreenNavigator() {
-    return FloatingActionButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return const BmiScreen();
-            },
+  Widget _buildBuildFabBmiScreenNavigator() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const BmiScreen();
+                },
+              ),
+            );
+          },
+          child: const Text(
+            'BMI',
           ),
-        );
-      },
-      child: const Text(
-        'BMI',
-      ),
+        ),
+        const SizedBox(
+          width: 20,
+        ),
+        FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const BmrScreen();
+                },
+              ),
+            );
+          },
+          child: const Text('BMR'),
+        ),
+      ],
     );
   }
 
