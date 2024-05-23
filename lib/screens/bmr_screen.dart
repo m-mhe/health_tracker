@@ -18,13 +18,19 @@ class _BmrScreenState extends State<BmrScreen> {
   double _weightValue = 0;
   bool _male = false;
   bool _female = false;
+  String _maleText = '';
+  String _femaleText = '';
 
   void _result() {
     double height = _heightValue * 30.48;
     if (_male == true) {
       _bMR = (10 * _weightValue) + (6.25 * height) - (5 * _ageValue) + 5;
+      _maleText = 'Male';
+      _femaleText = '';
     } else if (_female == true) {
       _bMR = (10 * _weightValue) + (6.25 * height) - (5 * _ageValue) - 161;
+      _femaleText = "Female";
+      _maleText = '';
     }
   }
 
@@ -68,7 +74,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Text(
-                          'BMR: ${_bMR.toStringAsFixed(2)} kcal/day',
+                          'BMR: ${_bMR.toStringAsFixed(2)} Kcal/Day',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -105,10 +111,23 @@ class _BmrScreenState extends State<BmrScreen> {
                                 blurRadius: 8,
                                 offset: Offset(3, 3))
                           ]),
-                      child: const Icon(
-                        Icons.male,
-                        size: 35,
-                        color: Colors.blue,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(
+                            Icons.male,
+                            size: 35,
+                            color: Colors.blue,
+                          ),
+                          Text(
+                            _maleText,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: Colors.blue,
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
@@ -134,10 +153,23 @@ class _BmrScreenState extends State<BmrScreen> {
                                 blurRadius: 8,
                                 offset: Offset(3, 3))
                           ]),
-                      child: const Icon(
-                        Icons.female,
-                        size: 35,
-                        color: Colors.pink,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(
+                            Icons.female,
+                            size: 35,
+                            color: Colors.pink,
+                          ),
+                          Text(
+                            _femaleText,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                              color: Colors.pink,
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
@@ -183,7 +215,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 0),
                         child: Text(
-                          'Age in year',
+                          'Age ${_ageValue.toStringAsFixed(2)} year',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -235,7 +267,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 0),
                         child: Text(
-                          'Height in feet',
+                          'Height ${_heightValue.toStringAsFixed(2)} feet',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -287,7 +319,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 0),
                         child: Text(
-                          'Weight in KG',
+                          'Weight ${_weightValue.toStringAsFixed(2)} KG',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
