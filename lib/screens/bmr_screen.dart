@@ -12,6 +12,10 @@ class BmrScreen extends StatefulWidget {
 }
 
 class _BmrScreenState extends State<BmrScreen> {
+  final TextEditingController _tecWight = TextEditingController();
+  final TextEditingController _tecHeight = TextEditingController();
+  final TextEditingController _tecAge = TextEditingController();
+
   double _bMR = 0;
   double _ageValue = 0;
   double _heightValue = 0;
@@ -74,7 +78,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Text(
-                          'BMR: ${_bMR.toStringAsFixed(2)} Kcal/Day',
+                          'BMR: ${_bMR.toStringAsFixed(2)} Cal/Day',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -208,21 +212,58 @@ class _BmrScreenState extends State<BmrScreen> {
                         onChanged: (dynamic value) {
                           setState(() {
                             _ageValue = value;
+                            _tecAge.text = _ageValue.toString();
                             _result();
                           });
                         },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 0),
-                        child: Text(
-                          'Age ${_ageValue.toStringAsFixed(2)} year',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            color: Colors.blue[700],
+                      SizedBox(
+                        width: 100,
+                        child: TextField(
+                          controller: _tecAge,
+                          onChanged: (v) {
+                            List<String> value = v.split('');
+                            if (value.last == '-') {
+                              _tecAge.clear();
+                            }
+                            setState(() {
+                              _ageValue = double.tryParse(v) ?? 0;
+                              _result();
+                            });
+                          },
+                          keyboardType: TextInputType.number,
+                          cursorColor: const Color(0xff299FD5),
+                          style: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            prefixStyle: const TextStyle(
+                                color: Color(0xff299FD5),
+                                fontWeight: FontWeight.w500),
+                            prefixText: 'Year ',
+                            labelStyle: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            labelText: 'Age:',
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(7),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(17),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -260,21 +301,58 @@ class _BmrScreenState extends State<BmrScreen> {
                         onChanged: (dynamic value) {
                           setState(() {
                             _heightValue = value;
+                            _tecHeight.text = _heightValue.toString();
                             _result();
                           });
                         },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 0),
-                        child: Text(
-                          'Height ${_heightValue.toStringAsFixed(2)} feet',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            color: Colors.blue[700],
+                      SizedBox(
+                        width: 100,
+                        child: TextField(
+                          controller: _tecHeight,
+                          onChanged: (v) {
+                            List<String> value = v.split('');
+                            if (value.last == '-') {
+                              _tecHeight.clear();
+                            }
+                            setState(() {
+                              _heightValue = double.tryParse(v) ?? 0;
+                              _result();
+                            });
+                          },
+                          keyboardType: TextInputType.number,
+                          cursorColor: const Color(0xff299FD5),
+                          style: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            prefixStyle: const TextStyle(
+                                color: Color(0xff299FD5),
+                                fontWeight: FontWeight.w500),
+                            prefixText: 'Feet ',
+                            labelStyle: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            labelText: 'Height:',
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(7),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(17),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -312,21 +390,58 @@ class _BmrScreenState extends State<BmrScreen> {
                         onChanged: (dynamic value) {
                           setState(() {
                             _weightValue = value;
+                            _tecWight.text = _weightValue.toString();
                             _result();
                           });
                         },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 0),
-                        child: Text(
-                          'Weight ${_weightValue.toStringAsFixed(2)} KG',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            color: Colors.blue[700],
+                      SizedBox(
+                        width: 100,
+                        child: TextField(
+                          controller: _tecWight,
+                          onChanged: (v) {
+                            List<String> value = v.split('');
+                            if (value.last == '-') {
+                              _tecWight.clear();
+                            }
+                            setState(() {
+                              _weightValue = double.tryParse(v) ?? 0;
+                              _result();
+                            });
+                          },
+                          keyboardType: TextInputType.number,
+                          cursorColor: const Color(0xff299FD5),
+                          style: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            prefixStyle: const TextStyle(
+                                color: Color(0xff299FD5),
+                                fontWeight: FontWeight.w500),
+                            prefixText: 'KG ',
+                            labelStyle: const TextStyle(
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            labelText: 'Weight:',
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(7),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(17),
+                              borderSide: const BorderSide(
+                                width: 2,
+                                color: Color(0xff299FD5),
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -366,5 +481,13 @@ class _BmrScreenState extends State<BmrScreen> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _tecHeight.dispose();
+    _tecAge.dispose();
+    _tecWight.dispose();
+    super.dispose();
   }
 }
