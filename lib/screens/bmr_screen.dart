@@ -63,7 +63,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
-                            spreadRadius: 4,
+                            spreadRadius: 1,
                             blurRadius: 8,
                             offset: Offset(3, 3))
                       ]),
@@ -111,9 +111,9 @@ class _BmrScreenState extends State<BmrScreen> {
                           boxShadow: const [
                             BoxShadow(
                                 color: Color(0xffA0D2ED),
-                                spreadRadius: 4,
+                                spreadRadius: 6,
                                 blurRadius: 8,
-                                offset: Offset(3, 3))
+                                offset: Offset(1, 1))
                           ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -153,9 +153,9 @@ class _BmrScreenState extends State<BmrScreen> {
                           boxShadow: const [
                             BoxShadow(
                                 color: Color(0xffFCB2EF),
-                                spreadRadius: 4,
+                                spreadRadius: 6,
                                 blurRadius: 8,
-                                offset: Offset(3, 3))
+                                offset: Offset(1, 1))
                           ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -192,7 +192,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
-                            spreadRadius: 4,
+                            spreadRadius: 1,
                             blurRadius: 8,
                             offset: Offset(3, 3))
                       ]),
@@ -281,7 +281,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
-                            spreadRadius: 4,
+                            spreadRadius: 1,
                             blurRadius: 8,
                             offset: Offset(3, 3))
                       ]),
@@ -370,7 +370,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
-                            spreadRadius: 4,
+                            spreadRadius: 1,
                             blurRadius: 8,
                             offset: Offset(3, 3))
                       ]),
