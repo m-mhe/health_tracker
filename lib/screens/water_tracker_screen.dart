@@ -353,7 +353,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
       onTap: _glassAdder,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 20),
+          padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 40),
           child: Stack(
             alignment: Alignment.center,
             children: [_waterAnimation(context), _tapHereText()],
@@ -381,14 +381,14 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     );
   }
 
-  LottieBuilder _waterAnimation(BuildContext context) {
+  Widget _waterAnimation(BuildContext context) {
     return Lottie.asset(
       'assets/animations/waterAnimation.json',
-      width: MediaQuery.sizeOf(context).width / 1.5,
+      height: MediaQuery.sizeOf(context).height / 3,
       fit: BoxFit.cover,
       repeat: true,
       frameRate: const FrameRate(90),
-    );
+      );
   }
 
   AppBar _waterTrackerAppBar() {
