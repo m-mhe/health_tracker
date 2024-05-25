@@ -28,7 +28,49 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
           _waterConsumptionHistory(),
         ],
       ),
-      floatingActionButton: _buildBuildFabBmiScreenNavigator(),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[200],
+        currentIndex: 1,
+        onTap: (i) {
+          switch (i) {
+            case (0):
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const BmiScreen();
+                    },
+                  ),
+                );
+              }
+            case (1):
+              {
+                null;
+              }
+            case (2):
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const BmrScreen();
+                    },
+                  ),
+                );
+              }
+          }
+        },
+        selectedItemColor: Color(0xff299FD5),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.water_drop_outlined), label: "WIT"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.heart_broken_outlined), label: "BMR")
+        ],
+      ),
     );
   }
 
@@ -137,45 +179,6 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Widgets
-  Widget _buildBuildFabBmiScreenNavigator() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return const BmiScreen();
-                },
-              ),
-            );
-          },
-          child: const Text(
-            'BMI',
-          ),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return const BmrScreen();
-                },
-              ),
-            );
-          },
-          child: const Text('BMR'),
-        ),
-      ],
-    );
-  }
-
   Expanded _waterConsumptionHistory() {
     return Expanded(
       child: ListView.builder(
@@ -388,7 +391,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
       fit: BoxFit.cover,
       repeat: true,
       frameRate: const FrameRate(90),
-      );
+    );
   }
 
   AppBar _waterTrackerAppBar() {

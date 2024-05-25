@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tracker/screens/water_tracker_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -287,32 +288,40 @@ class _BmiScreenState extends State<BmiScreen> {
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            backgroundColor: Colors.white,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Lottie.asset('assets/animations/waterAnimation.json'),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const BmrScreen();
-                  },
-                ),
-              );
-            },
-            child: const Text('BMR'),
-          ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[200],
+        currentIndex: 0,
+        onTap: (i) {
+          switch (i) {
+            case (0):
+              {
+                null;
+              }
+            case (1):
+              {
+                Navigator.pop(context);
+              }
+            case (2):
+              {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const BmrScreen();
+                    },
+                  ),
+                );
+              }
+          }
+        },
+        selectedItemColor: Color(0xff299FD5),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.water_drop_outlined), label: "WIT"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.heart_broken_outlined), label: "BMR")
         ],
       ),
     );
