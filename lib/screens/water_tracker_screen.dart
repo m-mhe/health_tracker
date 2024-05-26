@@ -29,7 +29,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.white,
         currentIndex: 1,
         onTap: (i) {
           switch (i) {
@@ -64,7 +64,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
         selectedItemColor: Color(0xff299FD5),
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
+              icon: Icon(Icons.health_and_safety_outlined), label: "BMI",),
           BottomNavigationBarItem(
               icon: Icon(Icons.water_drop_outlined), label: "WIT"),
           BottomNavigationBarItem(
@@ -271,7 +271,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   Padding _eightGlassMilestoneChecker() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(bottom: 0),
       child: Text(
         _isItHigherThanEightGlass(),
         style: TextStyle(
@@ -285,7 +285,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   Padding _glassNumberInputSection() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -356,7 +356,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
       onTap: _glassAdder,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 40),
+          padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 80),
           child: Stack(
             alignment: Alignment.center,
             children: [_waterAnimation(context), _tapHereText()],
@@ -387,7 +387,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
   Widget _waterAnimation(BuildContext context) {
     return Lottie.asset(
       'assets/animations/waterAnimation.json',
-      height: MediaQuery.sizeOf(context).height / 3,
+      height: MediaQuery.sizeOf(context).height / 3.5,
       fit: BoxFit.cover,
       repeat: true,
       frameRate: const FrameRate(90),

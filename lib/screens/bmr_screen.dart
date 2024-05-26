@@ -452,7 +452,7 @@ class _BmrScreenState extends State<BmrScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.white,
         currentIndex: 2,
         onTap: (i) {
           switch (i) {

@@ -77,23 +77,23 @@ class _BmiScreenState extends State<BmiScreen> {
                                 GaugeRange(
                                     startValue: 15,
                                     endValue: 18.4,
-                                    color: Colors.green),
+                                    color: Colors.lightBlueAccent[100]),
                                 GaugeRange(
                                     startValue: 18.5,
                                     endValue: 24.9,
-                                    color: const Color(0xff299FD5)),
+                                    color: Colors.blue[300]),
                                 GaugeRange(
                                     startValue: 25,
                                     endValue: 29.9,
-                                    color: Colors.yellow),
+                                    color: Colors.blue[500]),
                                 GaugeRange(
                                     startValue: 30,
                                     endValue: 34.9,
-                                    color: Colors.orange),
+                                    color: Colors.blue[700]),
                                 GaugeRange(
                                     startValue: 35,
                                     endValue: 40,
-                                    color: Colors.red)
+                                    color: Colors.blue[900])
                               ],
                               pointers: <GaugePointer>[
                                 NeedlePointer(
@@ -118,7 +118,14 @@ class _BmiScreenState extends State<BmiScreen> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: const Color(0xff299FD5),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 1,
+                            blurRadius: 8,
+                            offset: Offset(3, 3))
+                      ],
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(17)),
                   height: 170,
                   width: MediaQuery.sizeOf(context).width - 40,
@@ -130,12 +137,12 @@ class _BmiScreenState extends State<BmiScreen> {
                         width: MediaQuery.sizeOf(context).width - 60,
                         child: SfLinearGauge(
                           maximum: 200,
-                          axisLabelStyle: const TextStyle(color: Colors.white),
+                          axisLabelStyle: const TextStyle(color: Colors.black),
                           ranges: [
                             LinearGaugeRange(
                               startValue: 0,
                               endValue: double.tryParse(_tecWight.text) ?? 0,
-                              color: const Color(0xffFC4100),
+                              color: Colors.red,
                             ),
                           ],
                           markerPointers: [
@@ -146,7 +153,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           barPointers: const [
                             LinearBarPointer(
                               value: 200,
-                              color: Colors.white,
+                              color: Color(0xff299FD5),
                             )
                           ],
                         ),
@@ -163,17 +170,17 @@ class _BmiScreenState extends State<BmiScreen> {
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
-                          cursorColor: Colors.white,
+                          cursorColor: Color(0xff299FD5),
                           style: const TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w500),
+                              color: Color(0xff299FD5), fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                             prefixStyle: const TextStyle(
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                                 fontWeight: FontWeight.w500),
                             prefixText: 'KG ',
                             labelStyle: const TextStyle(
-                              color: Colors.white,
+                              color: Color(0xff299FD5),
                               fontWeight: FontWeight.w500,
                             ),
                             labelText: 'Weight:',
@@ -181,14 +188,14 @@ class _BmiScreenState extends State<BmiScreen> {
                               borderRadius: BorderRadius.circular(7),
                               borderSide: const BorderSide(
                                 width: 2,
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(17),
                               borderSide: const BorderSide(
                                 width: 2,
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                               ),
                             ),
                           ),
@@ -204,7 +211,14 @@ class _BmiScreenState extends State<BmiScreen> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: const Color(0xff299FD5),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 1,
+                            blurRadius: 8,
+                            offset: Offset(3, 3))
+                      ],
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(17)),
                   height: 170,
                   width: MediaQuery.sizeOf(context).width - 40,
@@ -216,12 +230,12 @@ class _BmiScreenState extends State<BmiScreen> {
                         width: MediaQuery.sizeOf(context).width - 60,
                         child: SfLinearGauge(
                           maximum: 10,
-                          axisLabelStyle: const TextStyle(color: Colors.white),
+                          axisLabelStyle: const TextStyle(color: Colors.black),
                           ranges: [
                             LinearGaugeRange(
                               startValue: 0,
                               endValue: double.tryParse(_tecHeight.text) ?? 0,
-                              color: const Color(0xffFC4100),
+                              color: Colors.red,
                             ),
                           ],
                           markerPointers: [
@@ -232,7 +246,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           barPointers: const [
                             LinearBarPointer(
                               value: 10,
-                              color: Colors.white,
+                              color: Color(0xff299FD5),
                             )
                           ],
                         ),
@@ -249,17 +263,17 @@ class _BmiScreenState extends State<BmiScreen> {
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
-                          cursorColor: Colors.white,
+                          cursorColor: Color(0xff299FD5),
                           style: const TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w500),
+                              color: Color(0xff299FD5), fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                             prefixStyle: const TextStyle(
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                                 fontWeight: FontWeight.w500),
                             prefixText: 'Feet ',
                             labelStyle: const TextStyle(
-                              color: Colors.white,
+                              color: Color(0xff299FD5),
                               fontWeight: FontWeight.w500,
                             ),
                             labelText: 'Height:',
@@ -267,14 +281,14 @@ class _BmiScreenState extends State<BmiScreen> {
                               borderRadius: BorderRadius.circular(7),
                               borderSide: const BorderSide(
                                 width: 2,
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(17),
                               borderSide: const BorderSide(
                                 width: 2,
-                                color: Colors.white,
+                                color: Color(0xff299FD5),
                               ),
                             ),
                           ),
@@ -289,7 +303,7 @@ class _BmiScreenState extends State<BmiScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.white,
         currentIndex: 0,
         onTap: (i) {
           switch (i) {
