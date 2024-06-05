@@ -61,8 +61,8 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
               }
           }
         },
-        selectedItemColor: Color(0xff299FD5),
-        items: [
+        selectedItemColor: const Color(0xff299FD5),
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.health_and_safety_outlined), label: "BMI",),
           BottomNavigationBarItem(
