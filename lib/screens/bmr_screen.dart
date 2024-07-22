@@ -74,7 +74,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Lottie.asset('assets/animations/health_animation3.json',
                           height: 224,
                           width: 224,
-                          frameRate: const FrameRate(90),
+                          frameRate: const FrameRate(60),
                           repeat: true),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
@@ -478,7 +478,7 @@ class _BmrScreenState extends State<BmrScreen> {
           }
         },
         selectedItemColor: Color(0xff299FD5),
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
           BottomNavigationBarItem(
