@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/water_tracker_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
@@ -21,9 +20,9 @@ class _BmrScreenState extends State<BmrScreen> {
   double _ageValue = 0;
   double _heightValue = 0;
   double _weightValue = 0;
-  bool _male = false;
+  bool _male = true;
   bool _female = false;
-  String _maleText = '';
+  String _maleText = 'Male';
   String _femaleText = '';
 
   void _result() {
