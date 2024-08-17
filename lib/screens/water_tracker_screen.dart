@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tracker/local_database.dart';
 import 'package:health_tracker/screens/bmi_screen.dart';
 import 'package:health_tracker/screens/bmr_screen.dart';
 import 'package:lottie/lottie.dart';
@@ -64,7 +65,9 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
         selectedItemColor: const Color(0xff299FD5),
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.health_and_safety_outlined), label: "BMI",),
+            icon: Icon(Icons.health_and_safety_outlined),
+            label: "BMI",
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.water_drop_outlined), label: "WIT"),
           BottomNavigationBarItem(
@@ -79,21 +82,29 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
   final TextEditingController _tEControllerNumberOfGlass =
       TextEditingController(text: '1');
 
-  final List<WaterIntakeInfo> _waterIntakeInfoList = [];
+  List<WaterIntakeInfo> _waterIntakeInfoList = [];
 
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Functionalities
+  Future<void> _fetch() async {
+    _waterIntakeInfoList = await LocalDatabase.fetchFromDB();
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    _fetch();
+    super.initState();
+  }
+
   void _glassAdder() {
     final int totalGlass = int.tryParse(_tEControllerNumberOfGlass.text) ?? 1;
     final DateTime time = DateTime.now();
     WaterIntakeInfo waterIntakeInfo =
         WaterIntakeInfo(glassesCount: totalGlass, timeInfo: time);
-    setState(
-      () {
-        _waterIntakeInfoList.insert(0, waterIntakeInfo);
-        _healthWarning();
-      },
-    );
+    LocalDatabase.insertToDB(waterIntakeInfo);
+    _healthWarning();
+    _fetch();
   }
 
   int _totalNumberOfGlass() {

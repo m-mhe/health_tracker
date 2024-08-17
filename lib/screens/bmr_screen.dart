@@ -476,7 +476,7 @@ class _BmrScreenState extends State<BmrScreen> {
               }
           }
         },
-        selectedItemColor: Color(0xff299FD5),
+        selectedItemColor: const Color(0xff299FD5),
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),

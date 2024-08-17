@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/water_tracker_screen.dart';
-import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import 'bmr_screen.dart';
@@ -170,9 +168,10 @@ class _BmiScreenState extends State<BmiScreen> {
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
-                          cursorColor: Color(0xff299FD5),
+                          cursorColor: const Color(0xff299FD5),
                           style: const TextStyle(
-                              color: Color(0xff299FD5), fontWeight: FontWeight.w500),
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                             prefixStyle: const TextStyle(
@@ -263,9 +262,10 @@ class _BmiScreenState extends State<BmiScreen> {
                             setState(() {});
                           },
                           keyboardType: TextInputType.number,
-                          cursorColor: Color(0xff299FD5),
+                          cursorColor: const Color(0xff299FD5),
                           style: const TextStyle(
-                              color: Color(0xff299FD5), fontWeight: FontWeight.w500),
+                              color: Color(0xff299FD5),
+                              fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                             prefixStyle: const TextStyle(
@@ -328,8 +328,8 @@ class _BmiScreenState extends State<BmiScreen> {
               }
           }
         },
-        selectedItemColor: Color(0xff299FD5),
-        items: [
+        selectedItemColor: const Color(0xff299FD5),
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
           BottomNavigationBarItem(
