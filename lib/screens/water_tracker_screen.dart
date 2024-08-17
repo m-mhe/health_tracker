@@ -97,14 +97,14 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     super.initState();
   }
 
-  void _glassAdder() {
+  Future<void> _glassAdder() async {
     final int totalGlass = int.tryParse(_tEControllerNumberOfGlass.text) ?? 1;
     final DateTime time = DateTime.now();
     WaterIntakeInfo waterIntakeInfo =
         WaterIntakeInfo(glassesCount: totalGlass, timeInfo: time);
     LocalDatabase.insertToDB(waterIntakeInfo);
+    await _fetch();
     _healthWarning();
-    _fetch();
   }
 
   int _totalNumberOfGlass() {
@@ -178,7 +178,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
                   Navigator.pop(context);
                 },
                 child: const Text(
-                  'Understood',
+                  'Acknowledge',
                 ),
               )
             ],
