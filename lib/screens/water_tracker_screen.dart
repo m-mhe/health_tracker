@@ -87,6 +87,11 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Functionalities
   Future<void> _fetch() async {
+    if(_waterIntakeInfoList.isNotEmpty){
+      if(_waterIntakeInfoList.last.timeInfo.difference(DateTime.now()).inHours <= -24){
+        await LocalDatabase.deleteAllFromDB();
+      }
+    }
     _waterIntakeInfoList = await LocalDatabase.fetchFromDB();
     setState(() {});
   }
@@ -102,7 +107,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     final DateTime time = DateTime.now();
     WaterIntakeInfo waterIntakeInfo =
         WaterIntakeInfo(glassesCount: totalGlass, timeInfo: time);
-    LocalDatabase.insertToDB(waterIntakeInfo);
+    await LocalDatabase.insertToDB(waterIntakeInfo);
     await _fetch();
     _healthWarning();
   }
