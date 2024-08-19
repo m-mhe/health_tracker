@@ -87,8 +87,10 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Functionalities
   Future<void> _fetch() async {
-    if(_waterIntakeInfoList.isNotEmpty){
-      if(_waterIntakeInfoList.last.timeInfo.difference(DateTime.now()).inHours <= -24){
+    if (_waterIntakeInfoList.isNotEmpty) {
+      if (_waterIntakeInfoList.last.timeInfo.day != DateTime.now().day ||
+          _waterIntakeInfoList.last.timeInfo.month != DateTime.now().month ||
+          _waterIntakeInfoList.last.timeInfo.year != DateTime.now().year) {
         await LocalDatabase.deleteAllFromDB();
       }
     }
