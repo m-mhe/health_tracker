@@ -12,10 +12,10 @@ class BmrScreen extends StatefulWidget {
 }
 
 class _BmrScreenState extends State<BmrScreen> {
+  /*---------------------------------------------VARIABLES-----------------------------------------------------*/
   final TextEditingController _tecWight = TextEditingController();
   final TextEditingController _tecHeight = TextEditingController();
   final TextEditingController _tecAge = TextEditingController();
-
   double _bMR = 0;
   double _ageValue = 0;
   double _heightValue = 0;
@@ -25,6 +25,7 @@ class _BmrScreenState extends State<BmrScreen> {
   String _maleText = 'Male';
   String _femaleText = '';
 
+  /*---------------------------------------------FUNCTIONS-----------------------------------------------------*/
   void _result() {
     double height = _heightValue * 30.48;
     if (_male == true) {
@@ -38,6 +39,7 @@ class _BmrScreenState extends State<BmrScreen> {
     }
   }
 
+  /*---------------------------------------------UI-BODY-----------------------------------------------------*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(

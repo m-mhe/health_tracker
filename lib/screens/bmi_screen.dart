@@ -11,9 +11,11 @@ class BmiScreen extends StatefulWidget {
 }
 
 class _BmiScreenState extends State<BmiScreen> {
+  /*---------------------------------------------VARIABLES-----------------------------------------------------*/
   final TextEditingController _tecWight = TextEditingController();
   final TextEditingController _tecHeight = TextEditingController();
 
+  /*---------------------------------------------FUNCTIONS-----------------------------------------------------*/
   double _result() {
     double result = (double.tryParse(_tecWight.text) ?? 0) /
         (((double.tryParse(_tecHeight.text) ?? 0) * 0.3048) *
@@ -37,6 +39,7 @@ class _BmiScreenState extends State<BmiScreen> {
     }
   }
 
+  /*---------------------------------------------UI-BODY-----------------------------------------------------*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(

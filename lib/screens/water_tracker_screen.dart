@@ -81,7 +81,6 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
   //Variables
   final TextEditingController _tEControllerNumberOfGlass =
       TextEditingController(text: '1');
-
   List<WaterIntakeInfo> _waterIntakeInfoList = [];
 
   /*----------------------------------------------------------------------------------------------------------------------*/
