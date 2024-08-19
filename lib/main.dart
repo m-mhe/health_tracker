@@ -3,7 +3,6 @@ import 'package:health_tracker/other_classes/data_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'app.dart';
-import 'local_database.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

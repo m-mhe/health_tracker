@@ -28,7 +28,8 @@ class LocalDatabase {
     databaseConnection.close();
     return waterIntakeInfoList;
   }
-  static Future<void> deleteAllFromDB() async{
+
+  static Future<void> deleteAllFromDB() async {
     final databaseConnections = await openDatabase(
       join(await getDatabasesPath(), 'health_tracker.db'),
     );
