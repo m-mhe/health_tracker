@@ -119,12 +119,12 @@ class _BmiScreenState extends State<BmiScreen> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ],
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17)),
@@ -213,12 +213,12 @@ class _BmiScreenState extends State<BmiScreen> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ],
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17)),
