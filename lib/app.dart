@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tracker/screens/screen_navigator.dart';
 import 'package:health_tracker/screens/water_tracker_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       darkTheme: _darkTheme(),
       theme: _lightTheme(),
-      home: const WaterTrackerScreen(),
+      home: const ScreenNavigator(),
     );
   }
 

@@ -65,7 +65,7 @@ class _BmiScreenState extends State<BmiScreen> {
                     width: MediaQuery.sizeOf(context).width - 40,
                     child: SfRadialGauge(
                         title: GaugeTitle(
-                            text: 'Result:${_bmiStatus()}',
+                            text: 'State:${_bmiStatus()}',
                             textStyle: const TextStyle(
                                 color: Color(0xff299FD5),
                                 fontWeight: FontWeight.w500,
@@ -80,19 +80,19 @@ class _BmiScreenState extends State<BmiScreen> {
                                     endValue: 18.4,
                                     color: Colors.lightBlueAccent[100]),
                                 GaugeRange(
-                                    startValue: 18.5,
+                                    startValue: 18.4,
                                     endValue: 24.9,
                                     color: Colors.blue[300]),
                                 GaugeRange(
-                                    startValue: 25,
+                                    startValue: 24.9,
                                     endValue: 29.9,
                                     color: Colors.blue[500]),
                                 GaugeRange(
-                                    startValue: 30,
+                                    startValue: 29.9,
                                     endValue: 34.9,
                                     color: Colors.blue[700]),
                                 GaugeRange(
-                                    startValue: 35,
+                                    startValue: 34.9,
                                     endValue: 40,
                                     color: Colors.blue[900])
                               ],
@@ -304,42 +304,6 @@ class _BmiScreenState extends State<BmiScreen> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 0,
-        onTap: (i) {
-          switch (i) {
-            case (0):
-              {
-                null;
-              }
-            case (1):
-              {
-                Navigator.pop(context);
-              }
-            case (2):
-              {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const BmrScreen();
-                    },
-                  ),
-                );
-              }
-          }
-        },
-        selectedItemColor: const Color(0xff299FD5),
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.water_drop_outlined), label: "WIT"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_outlined), label: "BMR")
-        ],
       ),
     );
   }

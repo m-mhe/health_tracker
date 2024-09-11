@@ -29,51 +29,6 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
           _waterConsumptionHistory(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 1,
-        onTap: (i) {
-          switch (i) {
-            case (0):
-              {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const BmiScreen();
-                    },
-                  ),
-                );
-              }
-            case (1):
-              {
-                null;
-              }
-            case (2):
-              {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const BmrScreen();
-                    },
-                  ),
-                );
-              }
-          }
-        },
-        selectedItemColor: const Color(0xff299FD5),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety_outlined),
-            label: "BMI",
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.water_drop_outlined), label: "WIT"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_outlined), label: "BMR")
-        ],
-      ),
     );
   }
 
@@ -85,6 +40,12 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   /*----------------------------------------------------------------------------------------------------------------------*/
   //Functionalities
+  @override
+  void initState() {
+    _fetch();
+    super.initState();
+  }
+
   Future<void> _fetch() async {
     if (_waterIntakeInfoList.isNotEmpty) {
       if (_waterIntakeInfoList.last.timeInfo.day != DateTime.now().day ||
@@ -95,12 +56,6 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     }
     _waterIntakeInfoList = await LocalDatabase.fetchFromDB();
     setState(() {});
-  }
-
-  @override
-  void initState() {
-    _fetch();
-    super.initState();
   }
 
   Future<void> _glassAdder() async {
@@ -432,3 +387,5 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     super.dispose();
   }
 }
+
+

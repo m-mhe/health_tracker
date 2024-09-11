@@ -62,12 +62,12 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ]),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -191,12 +191,12 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow: const [
+                      boxShadow:  [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ]),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -280,12 +280,12 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ]),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -369,12 +369,12 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow: const [
+                      boxShadow:  [
                         BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
+                            color: Colors.grey.shade400,
+                            spreadRadius: 0.1,
                             blurRadius: 8,
-                            offset: Offset(3, 3))
+                            offset: const Offset(2, 2))
                       ]),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -451,42 +451,6 @@ class _BmrScreenState extends State<BmrScreen> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 2,
-        onTap: (i) {
-          switch (i) {
-            case (0):
-              {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const BmiScreen();
-                    },
-                  ),
-                );
-              }
-            case (1):
-              {
-                Navigator.pop(context);
-              }
-            case (2):
-              {
-                null;
-              }
-          }
-        },
-        selectedItemColor: const Color(0xff299FD5),
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.health_and_safety_outlined), label: "BMI"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.water_drop_outlined), label: "WIT"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_outlined), label: "BMR")
-        ],
       ),
     );
   }
