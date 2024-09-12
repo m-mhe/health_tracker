@@ -25,7 +25,7 @@ class LocalDatabase {
           WaterIntakeInfo(
               glassesCount: glassesCount, timeInfo: DateTime.parse(timeInfo)));
     }
-    databaseConnection.close();
+    await databaseConnection.close();
     return waterIntakeInfoList;
   }
 

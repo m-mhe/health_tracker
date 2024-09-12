@@ -19,6 +19,7 @@ class _ScreenNavigatorState extends State<ScreenNavigator> {
     const BmrScreen()
   ];
   int index = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,9 @@ class _ScreenNavigatorState extends State<ScreenNavigator> {
         backgroundColor: Colors.white,
         currentIndex: index,
         onTap: (i) {
-          setState(() {index = i;});
+          setState(() {
+            index = i;
+          });
         },
         selectedItemColor: const Color(0xff299FD5),
         items: const [

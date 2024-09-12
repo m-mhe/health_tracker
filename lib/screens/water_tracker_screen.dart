@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:health_tracker/local_database.dart';
-import 'package:health_tracker/screens/bmi_screen.dart';
-import 'package:health_tracker/screens/bmr_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:health_tracker/other_classes/data_model.dart';
 import 'package:intl/intl.dart';
@@ -345,7 +343,6 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
           Icons.water_drop_outlined,
           color: Colors.black54,
           size: 28,
-          shadows: [],
         ),
         Text(
           '_Tap Here_',
@@ -387,5 +384,3 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
     super.dispose();
   }
 }
-
-

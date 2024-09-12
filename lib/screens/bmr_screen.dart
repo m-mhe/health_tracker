@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-import 'bmi_screen.dart';
-
 class BmrScreen extends StatefulWidget {
   const BmrScreen({super.key});
 
@@ -64,8 +62,8 @@ class _BmrScreenState extends State<BmrScreen> {
                       borderRadius: BorderRadius.circular(17),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ]),
@@ -110,12 +108,14 @@ class _BmrScreenState extends State<BmrScreen> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(17),
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                                color: Color(0xffA0D2ED),
+                                color: _male
+                                    ? const Color(0xffA0D2ED)
+                                    : Colors.grey[300]!,
                                 spreadRadius: 6,
                                 blurRadius: 8,
-                                offset: Offset(1, 1))
+                                offset: const Offset(1, 1))
                           ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -152,12 +152,14 @@ class _BmrScreenState extends State<BmrScreen> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(17),
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                                color: Color(0xffFCB2EF),
+                                color: _female
+                                    ? const Color(0xffFCB2EF)
+                                    : Colors.grey[300]!,
                                 spreadRadius: 6,
                                 blurRadius: 8,
-                                offset: Offset(1, 1))
+                                offset: const Offset(1, 1))
                           ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -191,10 +193,10 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow:  [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ]),
@@ -282,8 +284,8 @@ class _BmrScreenState extends State<BmrScreen> {
                       borderRadius: BorderRadius.circular(17),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ]),
@@ -369,10 +371,10 @@ class _BmrScreenState extends State<BmrScreen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(17),
-                      boxShadow:  [
+                      boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ]),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-import 'bmr_screen.dart';
-
 class BmiScreen extends StatefulWidget {
   const BmiScreen({super.key});
 
@@ -121,8 +119,8 @@ class _BmiScreenState extends State<BmiScreen> {
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ],
@@ -215,8 +213,8 @@ class _BmiScreenState extends State<BmiScreen> {
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade400,
-                            spreadRadius: 0.1,
+                            color: Colors.grey[350]!,
+                            spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(2, 2))
                       ],
