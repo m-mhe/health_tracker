@@ -100,7 +100,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
 
   String _waterConsumptionInLitter({required int serialNo}) {
     double glassToLitter = (_waterIntakeInfoList[serialNo].glassesCount / 4);
-    return "${glassToLitter.toStringAsFixed(2)} Litter";
+    return "${glassToLitter.toStringAsFixed(2)} L";
   }
 
   void _healthWarning() {
@@ -227,7 +227,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
             ),
           ),
           Text(
-            'Total: ${_totalNumberOfGlass()} Glass/ ${_totalNumberOfGlass() / 4} L',
+            'Total: ${_totalNumberOfGlass()} G/ ${_totalNumberOfGlass() / 4} L',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
