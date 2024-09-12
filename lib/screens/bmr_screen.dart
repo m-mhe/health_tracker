@@ -73,7 +73,7 @@ class _BmrScreenState extends State<BmrScreen> {
                       Lottie.asset('assets/animations/health_animation3.json',
                           height: 224,
                           width: 224,
-                          frameRate: const FrameRate(60),
+                          frameRate: const FrameRate(90),
                           repeat: true),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),

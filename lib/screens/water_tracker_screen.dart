@@ -359,7 +359,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
       height: MediaQuery.sizeOf(context).height / 3.5,
       fit: BoxFit.cover,
       repeat: true,
-      frameRate: const FrameRate(60),
+      frameRate: const FrameRate(90),
     );
   }
 
