@@ -1,16 +1,39 @@
-# health_tracker
+# Health Tracker App - Overview  
 
-A health tracker app project. This application track a person's water consumption per day and calculate body mass index.
+Stay on top of your health and wellness with **Health Tracker**, a simple yet powerful app designed to help you monitor key aspects of your well-being. From tracking your daily water intake to calculating vital health metrics, this app is your go-to companion for a healthier lifestyle.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Key Features  
 
-A few resources to get you started if this is your first Flutter project:
+### 1. **Daily Water Consumption Tracking**  
+- Keep track of your daily water intake effortlessly.  
+- Set hydration goals and receive reminders to stay hydrated throughout the day.  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 2. **BMI Calculator**  
+- Calculate your Body Mass Index (BMI) quickly and easily.  
+- Understand your BMI status with clear and intuitive feedback.  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 3. **BMR Calculator**  
+- Determine your Basal Metabolic Rate (BMR) based on your personal data.  
+- Gain insights into your daily calorie needs to maintain, lose, or gain weight.  
+
+---
+
+## App Interface  
+
+![Water Consumption Tracking](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/1.png)  
+![BMI Calculation](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/2.png)  
+![BMR Calculation](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/3.png)  
+
+---
+
+## Why Health Tracker?  
+
+Health Tracker simplifies the process of monitoring and improving your wellness. Whether you're working towards fitness goals or maintaining a healthy lifestyle, this app provides the tools you need to stay informed and motivated.  
+
+---
+
+## Get Started  
+
+Take control of your health today with **Health Tracker**—your partner in achieving a balanced and healthier life!  
