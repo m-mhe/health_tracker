@@ -247,7 +247,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
-          color: Colors.blue[700],
+          color: Colors.blue[800],
         ),
       ),
     );
