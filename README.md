@@ -22,9 +22,9 @@ Stay on top of your health and wellness with **Health Tracker**, a simple yet po
 
 ## App Interface  
 
-![Water Consumption Tracking](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/1.png)  
-![BMI Calculation](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/2.png)  
-![BMR Calculation](https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/3.png)  
+<img src="https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/1.png" width="500" />  
+<img src="https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/2.png" width="500" />  
+<img src="https://github.com/m-mhe/health_tracker/blob/main/app_overview_pictures/3.png" width="500" />  
 
 ---
 
